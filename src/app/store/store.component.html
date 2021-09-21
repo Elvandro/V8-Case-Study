@@ -1,0 +1,25 @@
+<div class="card table-responsive my-4 mx-2">
+  <div class="card-body">
+    <table class="table caption-top">
+      <caption>List of Products</caption>
+      <thead class="table-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Amount of Inventory</th>
+          <th scope="col">Reorder Level</th>
+          <th scope="col">Make Sale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let prod of products; index as i">
+          <th scope="row">{{i + 1}}</th>
+          <td>{{prod.name}}</td>
+          <td>{{prod.amount_of_inventory}}</td>
+          <td>{{prod.reorder_level}}</td>
+          <td><button class="btn btn-success" (click)="clickEvent(prod)"><fa-icon [icon]="faCartPlus"></fa-icon></button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
