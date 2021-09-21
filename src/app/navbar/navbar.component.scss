@@ -1,6 +1,6 @@
 nav {
   background-color: #e3f2fd !important;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px -12px;
 }
 
 
@@ -37,6 +37,10 @@ nav {
 
 #page-content-wrapper {
   min-width: 100vw;
+
+  .menu-icon {
+    margin-left: 10px;
+  }
 }
 
 #wrapper.toggled #sidebar-wrapper {
