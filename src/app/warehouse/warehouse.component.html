@@ -20,7 +20,7 @@
           <td>{{prod.amount_of_inventory}}</td>
           <td>{{prod.reorder_level}}</td>
           <td>{{prod.amount_to_order}}</td>
-          <td><button class="btn btn-warning" (click)="clickEvent(prod)"><fa-icon [icon]="faShippingFast" title="Dispatch Item"></fa-icon></button></td>
+          <td><button class="btn btn-warning" (click)="dispatchOrder(prod)"><fa-icon [icon]="faShippingFast" title="Dispatch Item"></fa-icon></button></td>
           <td>
             <button [hidden]="prod.amount_of_inventory > prod.reorder_level" class="btn btn-danger">Unprocessed</button>
             <button [hidden]="prod.amount_of_inventory < prod.reorder_level || prod.amount_of_inventory === prod.reorder_level" class="btn btn-success">processed</button>

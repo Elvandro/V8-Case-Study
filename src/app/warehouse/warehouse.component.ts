@@ -38,7 +38,7 @@ export class WarehouseComponent implements OnInit, OnDestroy {
     );
   }
 
-  clickEvent(prod: Product) {
+  dispatchOrder(prod: Product) {
     this.productsService.dispatchOrders(prod);
     this.toastrService.success('Visit the store', 'You have successfully dispatched the items ');
   }

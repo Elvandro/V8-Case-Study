@@ -24,7 +24,11 @@ export class ProductsService extends ProductData {
   };
 
   createOrders(product: Product) {
-    this.orders.push(product);
+    product.amount_of_inventory --;
+    if (!this.orders.includes(product)) {
+      this.orders.push(product);
+    };
+    return product;
   };
 
   getOrders(): Observable<any> {

@@ -38,13 +38,11 @@ export class StoreComponent implements OnInit, OnDestroy {
     );
   }
 
-  clickEvent(prod: Product) {
-    prod.amount_of_inventory --;
-
+  makeSale(prod: Product) {
+    this.productsService.createOrders(prod)
     if (prod.amount_of_inventory <= prod.reorder_level) {
       this.toastrService.warning('Visit Warehouse to disptach items', 'You have Reached the Reorder Level');
-      this.productsService.createOrders(prod);
-    }
+    };
   }
 
 

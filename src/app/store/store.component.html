@@ -17,7 +17,7 @@
           <td>{{prod.name}}</td>
           <td>{{prod.amount_of_inventory}}</td>
           <td>{{prod.reorder_level}}</td>
-          <td><button class="btn btn-success" (click)="clickEvent(prod)" title="Make Sale"><fa-icon [icon]="faCartPlus"></fa-icon></button></td>
+          <td><button class="btn btn-success" (click)="makeSale(prod)" title="Make Sale"><fa-icon [icon]="faCartPlus"></fa-icon></button></td>
         </tr>
       </tbody>
     </table>
