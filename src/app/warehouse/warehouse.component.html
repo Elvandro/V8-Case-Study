@@ -1,0 +1,32 @@
+<div class="card table-responsive my-4 mx-2">
+  <div class="card-body">
+    <table class="table caption-top">
+      <caption>List of Orders</caption>
+      <thead class="table-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Amount of Inventory</th>
+          <th scope="col">Reorder Level</th>
+          <th scope="col">Amount to Dispatch</th>
+          <th scope="col">Dispatch Order</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let prod of orders; index as i">
+          <th scope="row">{{i + 1}}</th>
+          <td>{{prod.name}}</td>
+          <td>{{prod.amount_of_inventory}}</td>
+          <td>{{prod.reorder_level}}</td>
+          <td>{{prod.amount_to_order}}</td>
+          <td><button class="btn btn-warning" (click)="clickEvent(prod)"><fa-icon [icon]="faShippingFast"></fa-icon></button></td>
+          <td>
+            <button [hidden]="prod.amount_of_inventory > prod.reorder_level" class="btn btn-danger">Unprocessed</button>
+            <button [hidden]="prod.amount_of_inventory < prod.reorder_level || prod.amount_of_inventory === prod.reorder_level" class="btn btn-success">processed</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
